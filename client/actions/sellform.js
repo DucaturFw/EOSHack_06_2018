@@ -1,6 +1,5 @@
-import {
-  CHANGE
-} from './../constant/sellform';
+import { CHANGE } from './../constant/sellform';
+import { SELL_TYPE } from './../constant/types';
 
 import { socket } from './../sockets';
 
@@ -12,7 +11,10 @@ const SellForm = {
     })
   },
   submit: () => (dispatch, getState) => {
-    const data = getState().sellForm;
+    const data = {
+      ...getState().sellForm,
+      type: SELL_TYPE
+    }
 
     console.log('submit data', data);
     socket.emit('sell', data);
