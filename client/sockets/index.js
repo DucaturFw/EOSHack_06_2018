@@ -1,11 +1,12 @@
 import io from 'socket.io-client';
 
+export const socket = io({ path: '/ws' });
+
 export default ({ dispatch }) => {
-  const socket = io({ path: '/ws' });
 
-  socket.emit('burp', 'world');
+  // socket.emit('burp', 'world');
 
-  socket.on('get', () => {
-    // console.log('recieve front');
-  })
+  // socket.on('get', () => {
+  //   // console.log('recieve front');
+  // })
 }

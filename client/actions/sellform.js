@@ -2,6 +2,8 @@ import {
   CHANGE
 } from './../constant/sellform';
 
+import { socket } from './../sockets';
+
 const SellForm = {
   change: data => (dispatch, getState) => {
     dispatch({
@@ -11,7 +13,9 @@ const SellForm = {
   },
   submit: () => (dispatch, getState) => {
     const data = getState().sellForm;
+
     console.log('submit data', data);
+    socket.emit('sell', data);
   }
 }
 
