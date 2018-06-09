@@ -21,15 +21,17 @@ module.exports = server => {
       })
     });
 
-    socket.on('buy', data => {
+    socket.on('buy', order => {
       mongo(db => {
-        db.collection('orders').insert(data);
+        db.collection('orders').insert(order);
+        socket.broadcast.emit('buyAdd', order);
       })
     });
 
-    socket.on('sell', data => {
+    socket.on('sell', order => {
       mongo(db => {
-        db.collection('orders').insert(data);
+        db.collection('orders').insert(order);
+        socket.broadcast.emit('sellAdd', order);
       })
     })
   });

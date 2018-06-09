@@ -16,4 +16,12 @@ export default ({ dispatch }) => {
   socket.on('getSellResult', orders => {
     actionsSellList.set(orders)(dispatch);
   })
+
+  socket.on('buyAdd', order => {
+    actionsBuyList.add(order)(dispatch);
+  })
+
+  socket.on('sellAdd', order => {
+    actionsBuyList.add(order)(dispatch);
+  })
 }
