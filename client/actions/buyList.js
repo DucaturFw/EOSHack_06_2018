@@ -1,4 +1,5 @@
 import {
+  ADD,
   SET,
   CHOICE
 } from './../constant/buyList';
@@ -14,7 +15,13 @@ const BuyList = {
       type: SET,
       payload: list
     })
-  }
+  },
+  add: item => (dispatch, getState) => {
+    dispatch({
+      type: ADD,
+      payload: item
+    })
+  },
 }
 
 export default BuyList;

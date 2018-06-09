@@ -15,10 +15,10 @@ class BuyList extends React.Component {
         const { list } = this.props;
 
         if (list) {
-            return list.map(item => {
+            return list.map((item, idx) => {
                 const total = parseInt(item.price, 10) * parseInt(item.amount, 10) || 0
 
-                return <Row key={item.id} onClick={this.handleClick.bind(this, item)}>
+                return <Row key={idx} onClick={this.handleClick.bind(this, item)}>
                     <Cell>{item.amount}</Cell>
                     <Cell>{item.price}</Cell>
                     <Cell>{total}</Cell>

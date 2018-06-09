@@ -2,6 +2,7 @@ import { CHANGE } from './../constant/sellform';
 import { SELL_TYPE } from './../constant/types';
 
 import { socket } from './../sockets';
+import actionSellList from './sellList';
 
 const SellForm = {
   change: data => (dispatch, getState) => {
@@ -11,13 +12,14 @@ const SellForm = {
     })
   },
   submit: () => (dispatch, getState) => {
-    const data = {
+    const order = {
       ...getState().sellForm,
       type: SELL_TYPE
     }
 
-    console.log('submit sell data', data);
-    socket.emit('sell', data);
+    console.log('submit sell data', order);
+    socket.emit('sell', order);
+    actionSellList.add(order)(dispatch, getState);
   }
 }
 

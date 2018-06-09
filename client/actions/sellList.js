@@ -1,6 +1,7 @@
 import {
   CHOICE,
-  SET
+  SET,
+  ADD
 } from './../constant/sellList';
 
 import buyForm from './buyform';
@@ -15,6 +16,12 @@ const SellList = {
       payload: list
     })
   },
+  add: item => (dispatch, getState) => {
+    dispatch({
+      type: ADD,
+      payload: item
+    })
+  }
 }
 
 export default SellList;

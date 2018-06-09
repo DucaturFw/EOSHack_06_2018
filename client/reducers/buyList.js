@@ -10,6 +10,12 @@ export default function sellListReducer(state = initialState, action) {
     case (SET): {
       return action.payload;
     }
+    case (ADD): {
+      return [
+        ...state,
+        action.payload
+      ]
+    }
   }
 
   return state;

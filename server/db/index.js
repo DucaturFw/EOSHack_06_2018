@@ -8,5 +8,7 @@ module.exports = function (callback) {
     var dbo = db.db("l2dex");
 
     callback(dbo);
+
+    db.close();
   });
 }
