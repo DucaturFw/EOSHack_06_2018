@@ -16,7 +16,7 @@ const SellForm = {
       type: SELL_TYPE
     }
 
-    console.log('submit data', data);
+    console.log('submit sell data', data);
     socket.emit('sell', data);
   }
 }

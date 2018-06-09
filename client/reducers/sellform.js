@@ -8,8 +8,6 @@ const initialState = {
 }
 
 export default function sellFormReducer(state = initialState, action) {
-  console.log('sellform reducer:', action);
-
   switch (action.type) {
     case CHANGE:
       return {

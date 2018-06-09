@@ -16,7 +16,7 @@ const BuyForm = {
       type: BUY_TYPE,
     };
 
-    console.log('submit data', data);
+    console.log('submit buy data', data);
     socket.emit('buy', data);
   }
 }

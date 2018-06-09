@@ -31,7 +31,7 @@ class BuyList extends React.Component {
         return (
             <Wrap>
                 <Title>
-                    Sell Orders
+                    Buy Orders
                 </Title>
                 <Table>
                     <thead>

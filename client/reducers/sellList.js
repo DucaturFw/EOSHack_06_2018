@@ -1,17 +1,15 @@
 import {
-  ADD
+  SET
 } from './../constant/sellList';
 
-import data from './faucet/cellList.json';
-
-const initialState = data;
+const initialState = [];
 
 export default function sellListReducer(state = initialState, action) {
-  console.log('sellList reducer:', action);
-
-  // switch (action.type) {
-
-  // }
+  switch (action.type) {
+    case SET: {
+      return action.payload;
+    }
+  }
 
   return state;
 }

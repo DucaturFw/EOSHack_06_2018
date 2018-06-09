@@ -4,22 +4,31 @@ module.exports = server => {
   const io = require('socket.io')(server.listener, { path: '/ws' });
 
   io.on('connection', function (socket) {
-    socket.on('buy', data => {
-      console.log('buy', data);
 
+    socket.on('getBuy', () => {
       mongo(db => {
-        console.log('db', db);
+        db.collection('orders').find({ type: 0 }).toArray((err, orders) => {
+          socket.emit('getBuyResult', orders);
+        });
+      })
+    });
 
+    socket.on('getSell', () => {
+      mongo(db => {
+        db.collection('orders').find({ type: 1 }).toArray((err, orders) => {
+          socket.emit('getSellResult', orders);
+        });
+      })
+    });
+
+    socket.on('buy', data => {
+      mongo(db => {
         db.collection('orders').insert(data);
       })
     });
 
     socket.on('sell', data => {
-      console.log('sell', data);
-
       mongo(db => {
-        console.log('db', db);
-
         db.collection('orders').insert(data);
       })
     })
