@@ -7,9 +7,12 @@ import actions from './../../actions/buyform';
 
 export default class ExchangeForm extends React.Component {
 
-    state = {
-        price: '35',
-        amount: '1'
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            ...props.view
+        }
     }
 
     componentWillReceiveProps(props) {
@@ -32,6 +35,7 @@ export default class ExchangeForm extends React.Component {
     }
 
     render() {
+        console.log(this.props, this.state)
         const { title, btnTitle } = this.props;
 
         const { amount, price } = this.state;

@@ -3,8 +3,8 @@ import {
 } from './../constant/buyform';
 
 const initialState = {
-  price: '',
-  amount: '',
+  price: '36',
+  amount: '1',
 }
 
 export default function buyFormReducer(state = initialState, action) {
