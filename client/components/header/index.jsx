@@ -12,7 +12,7 @@ class Header extends React.Component {
                 <Container>
                     <Inner>
                         <Name>
-                            <h3>l2dex</h3>
+                            <h3>DEX — Level 2</h3>
                         </Name>
                         <Acc>
                             EOS account: <strong>{ "mike.l2dex" }</strong>
