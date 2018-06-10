@@ -10,7 +10,7 @@ class Title extends React.Component {
         return (
             <Container>
                 <Wrap>
-                    Trade Markets
+                    <h2>ETH / EOS</h2>
                 </Wrap>
             </Container>
         )

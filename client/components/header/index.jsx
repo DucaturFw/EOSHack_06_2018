@@ -12,10 +12,10 @@ class Header extends React.Component {
                 <Container>
                     <Inner>
                         <Name>
-                            l2dex
+                            <h3>l2dex</h3>
                         </Name>
                         <Acc>
-                            Eos7efeifhwiufh
+                            EOS account: <strong>{ "mike.l2dex" }</strong>
                         </Acc>
                     </Inner>
                 </Container>
@@ -32,7 +32,8 @@ export default connect(
 )(Header);
 
 const Wrap = styled.div`
-    background-color: #D6E0FC;
+    background-color: #262626;
+    color: white;
     font-size: 16px;
     height: 40px;
 `;

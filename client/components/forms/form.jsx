@@ -8,8 +8,8 @@ import actions from './../../actions/buyform';
 export default class ExchangeForm extends React.Component {
 
     state = {
-        price: '',
-        amount: ''
+        price: '35',
+        amount: '1'
     }
 
     componentWillReceiveProps(props) {
@@ -46,7 +46,7 @@ export default class ExchangeForm extends React.Component {
                     <Item>
                         <Label>
                             <Txt>
-                                Price
+                                Price <small>(EOS)</small>
                             </Txt>
                             <Input
                                 name={"price"}
@@ -58,7 +58,7 @@ export default class ExchangeForm extends React.Component {
                     <Item>
                         <Label>
                             <Txt>
-                                Amount
+                                Amount <small>(ETH)</small>
                             </Txt>
                             <Input
                                 name={"amount"}
@@ -70,7 +70,7 @@ export default class ExchangeForm extends React.Component {
                     <Item>
                         <Label>
                             <Txt>
-                                Total
+                                Total <small>(EOS)</small>
                             </Txt>
                             <Input
                                 disabled
@@ -80,7 +80,7 @@ export default class ExchangeForm extends React.Component {
                         </Label>
                     </Item>
                     <Item>
-                        <button type="submit">{btnTitle}</button>
+                        <Btn type="submit">{btnTitle}</Btn>
                     </Item>
                 </Form>
             </Wrap>
@@ -89,17 +89,20 @@ export default class ExchangeForm extends React.Component {
 }
 
 const Wrap = styled.div`
-    font-size: 12px;
     text-align: center;
 `;
 
 const Title = styled.h4`
     text-align: center;
+    font-size: 120%;
+    margin-bottom: 8px;
 `;
 
 const Form = styled.form`
     background: #f7f7f7;
+    border: 1px solid #e6e6e6;
     padding: 5px;
+    margin-bottom: 20px;
 `;
 
 const Item = styled.div`
@@ -112,11 +115,22 @@ const Label = styled.label`
 
 const Txt = styled.span`
     display: inline-block;
-    width: 60px;
+    width: 160px;
     text-align: right;
     padding-right: 20px;
 `;
 
 const Input = styled.input`
     padding: 4px;
+`;
+
+const Btn = styled.button`
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border: 1px solid #d6d6d6;
+    background: #e7e7e7;
+    // color: white;
+    border-radius: 0;
+    padding: 10px 50px;
 `;

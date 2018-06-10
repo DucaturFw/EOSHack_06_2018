@@ -7,8 +7,8 @@ import Form from './form';
 export default connect(
     ({ sellForm }) => ({
         view: sellForm,
-        title: "Sell Form",
-        btnTitle: "sell"
+        title: "Sell ETH",
+        btnTitle: "Sell"
     }),
     dispatch => bindActionCreators(actions, dispatch)
 )(Form);

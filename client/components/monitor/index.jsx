@@ -49,4 +49,6 @@ const Inner = styled.div`
 
 const Item = styled.div`
     width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
 `;

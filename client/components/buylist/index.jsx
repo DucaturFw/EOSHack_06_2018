@@ -14,7 +14,7 @@ class BuyList extends React.Component {
     get items() {
         const { list } = this.props;
 
-        if (list) {
+        if (list && list.length) {
             return list.map((item, idx) => {
                 const total = parseInt(item.price, 10) * parseInt(item.amount, 10) || 0
 
@@ -24,6 +24,9 @@ class BuyList extends React.Component {
                     <Cell>{total}</Cell>
                 </Row>;
             })
+        }
+        else {
+            return <Row><Cell colSpan="3" style={{ textAlign: "center", marginTop: "10px" }}>No active orders</Cell></Row>
         }
     }
 
@@ -64,6 +67,7 @@ const Wrap = styled.div`
 const Title = styled.h4`
     text-align: center;
     font-size: 120%;
+    margin-bottom: 8px;
 `;
 
 const Table = styled.table`
@@ -80,7 +84,7 @@ const Row = styled.tr`
 `;
 
 const HeadCell = styled.th`
-    text-align: right;
+    text-align: center;
 `;
 
 const Cell = styled.td`

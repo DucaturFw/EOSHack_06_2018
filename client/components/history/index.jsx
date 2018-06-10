@@ -13,10 +13,12 @@ class History extends React.Component {
         return list.map(item => {
             const total = parseInt(item.price, 10) * parseInt(item.amount, 10) || 0
 
-            return <Row key={item.id}>
-                <Cell>{item.amount}</Cell>
-                <Cell>{item.price}</Cell>
-                <Cell>{total}</Cell>
+            let type = (item.price > 35) ? "buy" : "sell"
+            return <Row key={item.id} type={type}>
+                <Cell>{type.toUpperCase()}</Cell>
+                <Cell>{item.price.toFixed(4)}</Cell>
+                <Cell>{item.amount.toFixed(4)}</Cell>
+                <Cell>{(item.price * item.amount).toFixed(4)}</Cell>
             </Row>;
         })
     }
@@ -30,9 +32,10 @@ class History extends React.Component {
                 <Table>
                     <thead>
                         <tr>
-                            <HeadCell>Price</HeadCell>
-                            <HeadCell>Amount</HeadCell>
-                            <HeadCell>Total</HeadCell>
+                            <HeadCell>Buy/Sell</HeadCell>
+                            <HeadCell>Price (EOS)</HeadCell>
+                            <HeadCell>Amount (ETH)</HeadCell>
+                            <HeadCell>Total (EOS)</HeadCell>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,6 +70,8 @@ const Table = styled.table`
 
 const Row = styled.tr`
     cursor: pointer;
+
+    color: ${props => (props.type == 'buy') ? '#70a800' : '#ea0070'}
 
     &:hover {
         background: #f7f7f7;
