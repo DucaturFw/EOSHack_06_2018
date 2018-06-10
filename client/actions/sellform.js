@@ -14,7 +14,8 @@ const SellForm = {
   submit: () => (dispatch, getState) => {
     const order = {
       ...getState().sellForm,
-      type: SELL_TYPE
+      type: SELL_TYPE,
+      completed: false,
     }
 
     console.log('submit sell data', order);

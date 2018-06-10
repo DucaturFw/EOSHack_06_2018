@@ -9,6 +9,6 @@ module.exports = function (callback) {
 
     callback(dbo);
 
-    db.close();
+    // db.close();
   });
 }

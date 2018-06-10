@@ -15,6 +15,7 @@ const BuyForm = {
     const order = {
       ...getState().buyForm,
       type: BUY_TYPE,
+      completed: false,
     };
 
     console.log('submit buy data', order);
