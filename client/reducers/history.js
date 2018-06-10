@@ -1,11 +1,20 @@
-import data from './faucet/cellList.json';
+import {
+  ADD,
+  SET
+} from './../constant/history'
 
-const initialState = data;
+const initialState = [];
 
 export default function sellListReducer(state = initialState, action) {
-  // switch (action.type) {
-
-  // }
+  switch (action.type) {
+    case ADD:
+      return [
+        ...state,
+        action.payload
+      ];
+    case SET:
+      return action.payload;
+  }
 
   return state;
 }

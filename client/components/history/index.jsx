@@ -10,14 +10,14 @@ class History extends React.Component {
     get items() {
         const { list } = this.props;
 
-        return list.map(item => {
+        return list.map((item, idx) => {
             const total = parseInt(item.price, 10) * parseInt(item.amount, 10) || 0
 
-            let type = (item.price > 35) ? "buy" : "sell"
-            return <Row key={item.id} type={type}>
+            let type = "buy";
+            return <Row key={idx} type={type}>
                 <Cell>{type.toUpperCase()}</Cell>
-                <Cell>{item.price.toFixed(4)}</Cell>
-                <Cell>{item.amount.toFixed(4)}</Cell>
+                <Cell>{parseInt(item.price, 10).toFixed(4)}</Cell>
+                <Cell>{parseInt(item.amount, 10).toFixed(4)}</Cell>
                 <Cell>{(item.price * item.amount).toFixed(4)}</Cell>
             </Row>;
         })
