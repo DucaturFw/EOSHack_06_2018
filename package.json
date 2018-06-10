@@ -32,6 +32,7 @@
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "chalk": "^2.3.2",
     "css-loader": "^0.28.11",
+    "eosjs": "^14.1.1",
     "eslint-config-react-app": "^2.1.0",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-flowtype": "^2.46.1",
